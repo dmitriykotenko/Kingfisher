@@ -10,7 +10,13 @@ let package = Package(
     targets: [
         .target(
             name: "Kingfisher",
-            path: "Sources"
+            path: "Sources",
+            swiftSettings: [
+              .unsafeFlags([
+                "-Xfrontend",
+                "-disable-round-trip-debug-types"
+              ], .when(configuration: .debug))
+            ]
         )
     ]
 )
