@@ -17,14 +17,7 @@ let package = Package(
         .target(
             name: "Kingfisher",
             path: "Sources",
-            resources: [.process("PrivacyInfo.xcprivacy")],
-            swiftSettings: [
-              .unsafeFlags([
-                "-Xfrontend",
-                "-disable-round-trip-debug-types"
-              ], .when(configuration: .debug))
-            ]
-
+            resources: [.process("PrivacyInfo.xcprivacy")]
         )
     ]
 )
